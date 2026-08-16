@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> categories = List.generate(8, (index) => 'تصویر ${index + 1}');
+    final List<String> categories = List.generate(8, (index) => 'सेक्शन ${index + 1}');
 
     return Scaffold(
       appBar: AppBar(
@@ -97,7 +97,7 @@ class PatternListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 40 patterns per category
-    final List<String> patterns = List.generate(40, (index) => 'پیٹرن ${index + 1}');
+    final List<String> patterns = List.generate(40, (index) => 'पैटर्न ${index + 1}');
 
     return Scaffold(
       appBar: AppBar(
@@ -122,18 +122,18 @@ class PatternListScreen extends StatelessWidget {
                 child: ListTile(
                   leading: const Icon(Icons.book, color: Colors.teal),
                   title: Text(patterns[index]),
-                  subtitle: const Text('تفصیلات یہاں دیکھیں'),
+                  subtitle: const Text('विवरण यहाँ देखें'),
                   onTap: () {
                     // Show pattern details
                     showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
                         title: Text(patterns[index]),
-                        content: Text('$categoryName کا ${patterns[index]}۔ یہاں پیٹرن کی تفصیلات ہوں گی۔'),
+                        content: Text('$categoryName का ${patterns[index]}। यहाँ पैटर्न का विवरण होगा।'),
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(context),
-                            child: const Text('بند کریں'),
+                            child: const Text('बंद करें'),
                           ),
                         ],
                       ),
